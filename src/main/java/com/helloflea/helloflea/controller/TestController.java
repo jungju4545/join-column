@@ -17,8 +17,8 @@ public class TestController {
 	}
 	
 	@GetMapping("/test")
-	public @ResponseBody String test() {
-		return "<h1>test</h1>";
+	public String test() {
+		return "test";
 	}
 	
 	@GetMapping("/")
@@ -34,5 +34,9 @@ public class TestController {
 	@GetMapping("/join")
 	public String join() {
 		return "join";
+	}
+	@GetMapping("/market/list")
+	public String marketlist() {
+		return "marketlist";
 	}
 }
