@@ -8,6 +8,15 @@
 		<link rel="stylesheet" href="/css/common.css">
         <link rel="stylesheet" href="/css/main.css">
         
+        <!-- Style 모바일페이지 로고 위치 조정 -->
+        <style>
+        	@media (max-width: 992px) {
+        		#logo_img_href{
+        			top:-10px;
+        		}
+        	}
+        </style>
+        
 		<!-- Navigation Start  -->
 		<nav class="navbar navbar-default navbar-sticky bootsnav">
 
@@ -17,7 +26,7 @@
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
 						<i class="fa fa-bars"></i>
 					</button>
-					<a class="navbar-brand" href="/"><img src="/img/logo.png" class="logo" alt=""></a>
+					<a class="navbar-brand" href="/" id="logo_img_href"><img src="/img/logo.png" class="logo" alt=""></a>
 				</div>
 				<!-- End Header Navigation -->
 

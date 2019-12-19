@@ -29,7 +29,7 @@
 	
     <body>
 	
-		<%@ include file="include/nav.jsp" %>
+		<%@ include file="../include/nav.jsp" %>
 	
     <!-- Main jumbotron for a primary marketing message or call to action -->
 	<section class="inner-banner" style="backend:#242c36 url(https://via.placeholder.com/1920x600)no-repeat;">
@@ -128,6 +128,7 @@
 	
 								<div class="company-content">
 										<h3>마켓이름</h3>
+										<span style="font-size: 14px;font-weight: bold;">마켓 한줄설명마켓 한줄설명마켓 한줄설명마켓 한줄설명</span>
 										<p>
 											<span class="company-name" style="color:grey;">
 												<span style="font-size:13px;background:#01b5ff;color:white;padding:3px 15px 3px 15px;margin:0px 0px 10px 0px;display: inline-block;border-radius: 2px;">팔로우 : 3</span><br/>
@@ -171,10 +172,10 @@
 
 		<script src="/js/checkbox.js"></script>
 		
-		<%@ include file="include/counter.jsp" %>	
+		<%@ include file="../include/counter.jsp" %>	
 		
 		
-		<%@ include file="include/footer.jsp" %>
+		<%@ include file="../include/footer.jsp" %>
 		
     </body>
 </html>

@@ -15,7 +15,7 @@
 	
     <body>
 	
-	<%@ include file="include/nav.jsp" %>	
+	<%@ include file="../include/nav.jsp" %>	
 		
 		<!-- login section start -->
 		<section class="login-wrapper">
@@ -23,18 +23,18 @@
 				<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
 					<form>
 						<img class="img-responsive" alt="logo" src="img/logo.png">
-						<input type="text" class="form-control input-lg" placeholder="User Name">
-						<input type="password" class="form-control input-lg" placeholder="Password">
+						<input type="text" class="form-control input-lg" placeholder="User Name" style="border-radius: 10px;">
+						<input type="password" class="form-control input-lg" placeholder="Password" style="border-radius: 10px;">
 						<label><a href="">Forget Password?</a></label>
 						<button type="submit" class="btn btn-primary">Login</button>
-						<p>Have't Any Account <a href="/join">Create An Account</a></p>
+						<p>계정이 없으신가요? <a href="/join">가입하러 가기</a></p>
 					</form>
 				</div>
 			</div>
 		</section>
 		<!-- login section End -->	
-		<%@ include file="include/counter.jsp" %>	
-		<%@ include file="include/footer.jsp" %>	
+		<%@ include file="../include/counter.jsp" %>	
+		<%@ include file="../include/footer.jsp" %>	
 		 
     </body>
 </html>
