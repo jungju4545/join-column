@@ -52,21 +52,7 @@
 							<br/>
 							
 						
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<i class="fa fa-user fa-fw"></i> 행사사진
-								<span style="font-size:13px;background:#da0833;color:white;padding:3px 15px 3px 15px;margin:0px 0px 10px 0px;display: inline-block;border-radius: 2px;">수정하기</span>
-							</div>
-												<!-- 마켓 이미지 -->
-							<div class="col-md-12 col-sm-3" style="background:white;padding-top: 10px; padding-bottom: 10px;">
-								<div class="col-md-3 col-sm-3">
-								 <img src="/img/microsoft.png" alt="" class="img-responsive">
-								</div>
-								<div class="col-md-3 col-sm-3">
-								 <img src="/img/microsoft.png" alt="" class="img-responsive">
-								</div>
-							</div>
-						</div>
+
 						
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -90,6 +76,8 @@
 													<i class="fa fa-map-marker"></i> 부산광역시 동래구 온천장로 100<br/>
 													<i class="fa fa-list"></i>#의류 #음식
 												</span>
+												<br/>
+												<span style="font-size:13px;background:red;color:white;padding:3px 15px 3px 15px;margin:0px 0px 10px 0px;display: inline-block;border-radius: 2px;">삭제하기</span>
 											</p>
 									</div>
 							</div>
