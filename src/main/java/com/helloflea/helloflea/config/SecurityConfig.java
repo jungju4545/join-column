@@ -40,9 +40,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				// user의 컬럼명이 다를경우 아래코드 2줄로 설정
 				.usernameParameter("username")
 				.passwordParameter("password")
-				.loginPage("/user/loginForm")
-				.loginProcessingUrl("/user/loginProcess")
-				.defaultSuccessUrl("/home")
+				.loginPage("/user/login")
+				.loginProcessingUrl("/market/loginProc")
+				.defaultSuccessUrl("/index")
 				.and()
 				.logout().logoutSuccessHandler(new MyLogoutSuccessHandler());
 	}

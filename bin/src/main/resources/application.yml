@@ -38,6 +38,3 @@ spring:
     user:
       name: test
       password: test
-
-file:
-  path: C:/tool/springwork/marketProject/src/main/resources/static/upload/
