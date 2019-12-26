@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.helloflea.helloflea.model.Market;
@@ -34,6 +35,8 @@ public class MarketController {
 	
 	@Value("${file.path}")
 	private String fileRealPath;
+	
+	
 	
 	/////////////////////승인////////////////////////////
 	@GetMapping("/market/appoval/{id}")
@@ -114,13 +117,27 @@ public class MarketController {
 		model.addAttribute("markets", markets);
 		return "list/marketlist";
 	}
+	
+	@RequestMapping(value = "market/search", method= {RequestMethod.GET, RequestMethod.POST})
+	public @ResponseBody Market search(Model model) {
+	// local, category 빼고 전부 null
+		Optional<Market> markets=marketRepo.findByCategory(model);
+		Market market = markets.get();
+		return market;
+	}
 	///////////////////////////////////////
 	
 	
 	///////////////마켓 업데이트/////////////////
-	@GetMapping("/market/update")
-	public String marketUpdate() {
-		return "/market/update";
+	@GetMapping("/market/updateForm")
+	public String updateForm() {
+		return"/market/update";
+	}
+	@PostMapping("/market/update")
+	public String marketUpdate(Market market) {
+		marketRepo.save(market);
+		
+		return "list/marketlist";
 	}
 	///////////////////////////////////////
 }

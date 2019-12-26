@@ -6,10 +6,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>마켓 업데이트</title>
+        <title>마켓등록</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+         
     </head>
+   
     <body>
 	
 	<%@ include file="../include/nav.jsp" %>	
@@ -18,10 +20,9 @@
 		<section class="login-wrapper">
 			<div class="container">
 				<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
-					<form action="/market/update" method="POST">
+					<form action="/market/update/${market.Id}" method="POST" enctype="multipart/form-data">
 						<img class="img-responsive" alt="logo" src="/img/logo.png">
-						<h2>마켓등록</h2>
-					
+						<h2>마켓수정</h2>
 						<input type="text" class="form-control input-lg" name="marketName" placeholder="Market Name" required="required">
 						
 						 <select class="form-control input-lg" name="local" required="required">
@@ -50,8 +51,12 @@
 						    <option value="#">#</option>
 						</select> 
 					   <!-- 이미지 업로드 시작 -->
-						
-						<!-- 이미지 업로드 끝 -->
+					
+						<input id="input_img" type="file" name="file" placeholder="사진파일">
+						<div class="img_wrap">
+									<img id="img" />
+						</div>
+				<!-- 이미지 업로드 끝 -->
 						
 						
 							 <!-- 도로명 주소 시작 -->
@@ -62,9 +67,11 @@
 						</div>
 							<input type="text" class="form-control input-lg" id="roadFullAddr" name="address" placeholder="도로명 주소 자동입력이 됩니다." required="required" readonly>  
 						<!-- 도로명 주소 끝 -->
-						<textarea style="resize: none;" class ="form-control input-lg" name="marketIntroduce" cols="40" rows="5" placeholder="마켓소개를 해주세요" required="required"></textarea>
+						
+						<textarea style="resize: none;" class ="form-control input-lg" name="marketIntro" cols="40" rows="5" placeholder="마켓소개를 해주세요" required="required"></textarea>
 						<input type="text" class="form-control input-lg" name="kakaoId" placeholder="KakaoId" required="required">
-						<button type="submit" class="btn btn-primary">마켓 업데이트하기</button>
+						<button type="submit" class="btn btn-primary">마켓 수정하기</button>
+						<!-- <p>Have't Any Account <a href="/login">계정이 있으신가요? 로그인하러 가기</a></p> -->
 					</form>
 				</div>
 			</div>
@@ -93,6 +100,27 @@
 		//document.form.roadFullAddr.value = roadFullAddr;
 		var juso=document.querySelector('#roadFullAddr');
 		juso.value = roadFullAddr;
+	}
+
+	var sel_file;
+	$(document).ready(function() {
+		$('#input_img').on("change", handleImgFileSelect);
+	});
+	function handleImgFileSelect(e) {
+		var files = e.target.files;
+		var filesArr = Array.prototype.slice.call(files);
+		filesArr.forEach(function(f) {
+			if (!f.type.match("image.*")) {
+				alert("확장자는 이미지 확장자만 가능합니다.");
+				return;
+			}
+			sel_file = f;
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				$('#img').attr('src', e.target.result);
+			}
+			reader.readAsDataURL(f);
+		});
 	}
 	
 </script>

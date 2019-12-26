@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Jober Desk | Responsive Job Portal Template</title>
+        <title>마켓 정보 상세보기</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		
@@ -39,7 +39,8 @@
 					<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
 							<li><a href="index.html">Home</a></li> 
 							<li><a href="login.html">Login</a></li>
-							<li><a href="companies.html">Companies</a></li> 
+							<li><a href="/market/updateForm">update</a></li> 
+							<input type = "hidden">
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse</a>
 								<ul class="dropdown-menu animated fadeOutUp" style="display: none; opacity: 1;">
@@ -71,12 +72,12 @@
 				<div class="row">
 					<div class="basic-information">
 						<div class="col-md-3 col-sm-3">
-						
+						<%-- <h1>${market.Id }</h1> --%>
 						<!-- 마켓 상세설명 : 여기에 승인이 필요한가???? -->
 						<img src="/upload/${market.marketImage}" alt="" class="img-responsive"> 
 						 <!-- <img src="/img/microsoft.png" alt="" class="img-responsive"> -->
 						</div>
-						
+						<input type="hidden" name="id" value="${market.id}">
 						<div class="col-md-9 col-sm-9">
 							<div class="profile-content">
 									<h2>${market.marketName }<span>Internet and computer software</span></h2>
@@ -253,7 +254,8 @@
 		<script src="/js/bootsnav.js"></script>
 		<script src="/js/main.js"></script>
 		<script>
-		function doOpenCheck(chk){
+//체크박스 중복선택 방지
+			function doOpenCheck(chk){
 		    var obj = document.getElementsByName("admin");
 		    for(var i=0; i<obj.length; i++){
 		        if(obj[i] != chk){

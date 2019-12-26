@@ -44,75 +44,76 @@
 	
 	<!-- 마켓리스트 시작 -->
 		<!-- DB에 저장된 마켓리스트를 다 가지고 오기 (상태는 승인이 된것만) -->
-		
+		<!-- 체크박스는 String이 아닌 배열로 넘어가서 파라미터가 mismatch되는가봅니다. 
+		        그럼 배열로 넘긴 뒤, for문으로 select한다면?....-->
 		<section class="jobs">
 			<div class="container">
 				<div class="row heading">
 					<!-- <Form id="search_market" action="javascript:alert('현재페이지에 GET으로 전송')" Method="GET"> -->
-					<Form id="search_market" action="/market/search" Method="POST">
+					<Form id="search_market" action="javascript:alert('현재페이지에 GET으로 전송')" Method="GET">
 						<span class="button-checkbox" id="category">
         					<button type="button" class="btn" data-color="info" style="margin:3px;" onclick="info_sel_all()">전체</button>
-        						<input type="checkbox" name="category" value="전체" class="hidden" checked />
+        						<input type="checkbox" name="category" class="hidden" checked />
    						 </span>
 						<span class="button-checkbox" id="category">
-        					<button name="category" value="의류" type="button"  class="btn" data-color="info" style="margin:3px;">의류</button>
-        						<input type="checkbox"  class="hidden"   />
+        					<button type="button"  class="btn" data-color="info" style="margin:3px;">의류</button>
+        						<input type="checkbox" name="category" class="hidden"   />
    						 </span>
    						 <span class="button-checkbox" id="category">
         					<button type="button" class="btn" data-color="info" style="margin:3px;">액세서리</button>
-        						<input type="checkbox" name="category" value="악세서리" class="hidden"  />
+        						<input type="checkbox" name="category" class="hidden"  />
    						 </span>
    						 <span class="button-checkbox" id="category">
-        					<button type="button" name="category" value="의류" type="button" class="btn" data-color="info" style="margin:3px;">음식</button>
-        						<input type="checkbox" name="category"  value="음식" class="hidden"  />
+        					<button type="button" class="btn" data-color="info" style="margin:3px;">푸드</button>
+        						<input type="checkbox" name="category" class="hidden"  />
    						 </span>
    						 <span class="button-checkbox" id="category">
-        					<button type="button" name="category" value="의류" type="button" class="btn" data-color="info" style="margin:3px;">화장품</button>
-        						<input type="checkbox"  value="화장품" class="hidden"  />
+        					<button type="button" class="btn" data-color="info" style="margin:3px;">화장품</button>
+        						<input type="checkbox" name="category" class="hidden"  />
    						 </span>
    						 <span class="button-checkbox" id="category">
-        					<button type="button" name="category" value="의류" type="button" class="btn" data-color="info" style="margin:3px;">방향제</button>
-        						<input type="checkbox" value="화장품" name="category" class="hidden"  />
+        					<button type="button" class="btn" data-color="info" style="margin:3px;">방향제</button>
+        						<input type="checkbox" class="hidden"  />
    						 </span>
    						 <span class="button-checkbox" id="category">
-        					<button type="button" name="category" value="의류" type="button" class="btn" data-color="info" style="margin:3px;">캔들</button>
-        						<input type="checkbox"  class="hidden"  />
+        					<button type="button" class="btn" data-color="info" style="margin:3px;">캔들</button>
+        						<input type="checkbox" class="hidden"  />
    						 </span>
    						 <span class="button-checkbox" id="category">
-        					<button type="button" name="category" value="의류" type="button" class="btn" data-color="info" style="margin:3px;">기타</button>
-        						<input   type="checkbox" class="hidden"  />
+        					<button type="button" class="btn" data-color="info" style="margin:3px;">기타</button>
+        						<input type="checkbox" class="hidden"  />
    						 </span>
    						 <hr/><!-- 이까지 카테고리 -->
    						 	<span class="button-checkbox" id="local">
-        						<button type="button"  class="btn" data-color="danger"  style="margin:3px;">전체</button>
-        						<input type="checkbox" value="화장품" name="local" class="hidden" checked />
+        						<button type="button" class="btn" data-color="danger"  style="margin:3px;">전체</button>
+        						<input type="checkbox" class="hidden" checked />
     						</span>
     						<span class="button-checkbox" id="local">
         						<button type="button" class="btn" data-color="danger"  style="margin:3px;">서울/경기</button>
-        						<input type="checkbox" value="화장품" name="local" class="hidden"  />
-    						</span>
-    						<span class="button-checkbox" id="local">
-        						<button type="button" name="local" value="강원" class="btn" data-color="danger"  style="margin:3px;">강원</button>
-        						<input type="checkbox"  class="hidden"  />
-    						</span>
-    						<span class="button-checkbox" id="local">
-        						<button type="button" name="local" value="강원" class="btn" data-color="danger"  style="margin:3px;">충청</button>
         						<input type="checkbox" class="hidden"  />
     						</span>
     						<span class="button-checkbox" id="local">
-        						<button type="button" name="local" value="강원" class="btn" data-color="danger"  style="margin:3px;">경상</button>
+        						<button type="button" class="btn" data-color="danger"  style="margin:3px;">강원</button>
         						<input type="checkbox" class="hidden"  />
     						</span>
     						<span class="button-checkbox" id="local">
-        						<button type="button" name="local" value="강원" class="btn" data-color="danger"  style="margin:3px;">전라</button>
+        						<button type="button" class="btn" data-color="danger"  style="margin:3px;">충청</button>
         						<input type="checkbox" class="hidden"  />
     						</span>
     						<span class="button-checkbox" id="local">
-        						<button type="button" name="local" value="강원" class="btn" data-color="danger"  style="margin:3px;">제주</button>
+        						<button type="button" class="btn" data-color="danger"  style="margin:3px;">경상</button>
+        						<input type="checkbox" class="hidden"  />
+    						</span>
+    						<span class="button-checkbox" id="local">
+        						<button type="button" class="btn" data-color="danger"  style="margin:3px;">전라</button>
+        						<input type="checkbox" class="hidden"  />
+    						</span>
+    						<span class="button-checkbox" id="local">
+        						<button type="button" class="btn" data-color="danger"  style="margin:3px;">제주</button>
         						<input type="checkbox" class="hidden"  />
     						</span>
     						<hr/>
-    						<input type="submit" style="padding:3px 15px;border:1px solid black;border-radius: 5px;background: white;" value="검색"></input>
+    						<input id="search" type="submit" style="padding:3px 15px;border:1px solid black;border-radius: 5px;background: white;" value="검색"></input>
     					</Form>
 					</div>
 				</div>
@@ -158,19 +159,25 @@
 		<!-- 마켓리스트 끝 -->
 		
 		<script>
+		// 동일 이름 다중체크처리
+		// 배열 선언
+
+		var arrayParam = new Array();
+
+
+
+		//each로 loop를 돌면서 checkbox의 check된 값을 가져와 담아준다.
+
+		$("input:checkbox[name=category]:checked").each(function(){
+
+			arrayParam.push($(this).val());
+
+		});
+
+
+
 		
-		function function_click() {  
-		    var str = "";  
-		    $("input:checkbox:checked").each(function (index) {  
-		        str += $(this).val() + ",";  
-		    });  
-		    return str;  
-		    alert(str);  
-		}  
 		
-
-
-
 			function info_sel_all(){
 					test =document.querySelectorAll('#category')
 
