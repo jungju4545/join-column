@@ -14,24 +14,25 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Market {
-
+public class Events {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String marketName;
+	private String eventName;
+	private Timestamp startDate;
+	private Timestamp endDate;
 	private int local;
-	private int category;
-	private String marketAddress;
-	private String marketIntro;
-	private String kakaoId;
-	private String marketImage;
-	private String marketState;
+	private String eventIntro;
+	private String eventImage;
+	private String managerPhone;
+	private String managerAddress;
+	private String eventAddress;
+	private String eventState;
 	
 	@CreationTimestamp
 	private Timestamp createDate;
 	@CreationTimestamp
 	private Timestamp updateDate;
-	
-	
+
 }
