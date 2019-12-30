@@ -9,7 +9,6 @@
         <title>마켓등록</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-         
     </head>
    
     <body>
@@ -20,13 +19,13 @@
 		<section class="login-wrapper">
 			<div class="container">
 				<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
-					<form action="/market/update/${market.Id}" method="POST" enctype="multipart/form-data">
+					<form action="/market/update/${market.id}" method="POST" enctype="multipart/form-data">
 						<img class="img-responsive" alt="logo" src="/img/logo.png">
 						<h2>마켓수정</h2>
-						<input type="text" class="form-control input-lg" name="marketName" placeholder="Market Name" required="required">
+						<input type="text" class="form-control input-lg" name="marketName" value="${market.marketName }" placeholder="Market Name" required="required">
 						
-						 <select class="form-control input-lg" name="local" required="required">
-						    <option value="">지역선택</option>
+						 <select class="form-control input-lg" name="local" value=""  required="required">
+						    <option value="${market.local}">${market.local}</option>
 						    <option value="서울">서울</option>
 						    <option value="경기도">경기도</option>
 						    <option value="강원">강원</option>
@@ -38,8 +37,8 @@
 						    <option value="#">#</option>
 						</select> 
 						
-						 <select class="form-control input-lg" name="category" required="required">
-						    <option value="">카테고리</option>
+						 <select class="form-control input-lg" name="category"   required="required">
+						    <option value="${market.category }">${market.category }</option>
 						    <option value="음식">음식</option>
 						    <option value="의류">의류</option>
 						    <option value="악세사리">악세사리</option>
@@ -52,7 +51,8 @@
 						</select> 
 					   <!-- 이미지 업로드 시작 -->
 					
-						<input id="input_img" type="file" name="file" placeholder="사진파일">
+						<input id="input_img" type="file" name="file" value="${market.marketImage}"   placeholder="사진파일">
+						
 						<div class="img_wrap">
 									<img id="img" />
 						</div>
@@ -62,14 +62,14 @@
 							 <!-- 도로명 주소 시작 -->
 						 <div class="col-md-12">
 							<div class="form-group float-right">
-								<a style="cursor:pointer;" class="blog_btn" onClick="goPopup()">주소찾기</a>
+								<a style="cursor:pointer;" class="blog_btn"  onClick="goPopup()">주소찾기</a>
 							</div>
 						</div>
-							<input type="text" class="form-control input-lg" id="roadFullAddr" name="address" placeholder="도로명 주소 자동입력이 됩니다." required="required" readonly>  
+							<input type="text" class="form-control input-lg"  id="roadFullAddr" name="address" value="${market.address}" placeholder="도로명 주소 자동입력이 됩니다." required="required" readonly>  
 						<!-- 도로명 주소 끝 -->
 						
-						<textarea style="resize: none;" class ="form-control input-lg" name="marketIntro" cols="40" rows="5" placeholder="마켓소개를 해주세요" required="required"></textarea>
-						<input type="text" class="form-control input-lg" name="kakaoId" placeholder="KakaoId" required="required">
+						<textarea style="resize: none;" class ="form-control input-lg" name="marketIntro"   cols="40" rows="5" placeholder="마켓소개를 해주세요" required="required">${market.marketIntro}</textarea>
+						<input type="text" class="form-control input-lg" name="kakaoId" placeholder="KakaoId" value="${market.kakaoId}"  required="required">
 						<button type="submit" class="btn btn-primary">마켓 수정하기</button>
 						<!-- <p>Have't Any Account <a href="/login">계정이 있으신가요? 로그인하러 가기</a></p> -->
 					</form>
@@ -102,6 +102,7 @@
 		juso.value = roadFullAddr;
 	}
 
+	//사진 업로드
 	var sel_file;
 	$(document).ready(function() {
 		$('#input_img').on("change", handleImgFileSelect);

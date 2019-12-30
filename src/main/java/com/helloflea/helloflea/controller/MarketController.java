@@ -36,6 +36,14 @@ public class MarketController {
 	@Value("${file.path}")
 	private String fileRealPath;
 	
+/////////////////////태스트///////////////////////////
+@GetMapping("/market/test")
+public String test() {
+	
+	return"/list/test";
+}
+
+///////////////////////////////////////////////////
 	
 	
 	/////////////////////승인////////////////////////////
@@ -57,7 +65,7 @@ public class MarketController {
 	@RequestMapping(value = "market/jusoPopup", method= {RequestMethod.GET, RequestMethod.POST})
 	   public String juso() {
 	      return "market/jusoPopup";
-	   }
+	   }//완료
 	////////////////////////////////////////
 	
 	////////////////마켓 상세정보///////////////////
@@ -67,7 +75,7 @@ public class MarketController {
 		Market market = markets.get(); // optional사용할땐 optional담고 .get()으로 해서 다시 모델에 담는
 		model.addAttribute("market", market);
 		return "detail/market-detail";
-	}
+	}//완료
 	
 	////////////////////////////////////////
 //	@PostMapping("/market/joinProc")
@@ -81,7 +89,7 @@ public class MarketController {
 	@GetMapping("/market/join")
 	public String joinForm() {
 		return "/market/join";
-	}
+	}//완료
 	
 	@PostMapping("/market/joinProc")
 	public String MarketJoin(
@@ -105,7 +113,7 @@ public class MarketController {
 		marketRepo.save(market);
 		return"redirect:/market/marketlist";
 		
-	}
+	}//완료
 	///////////////////////////////////////
 	
 	
@@ -116,7 +124,7 @@ public class MarketController {
 		List<Market> markets = marketRepo.findAll();
 		model.addAttribute("markets", markets);
 		return "list/marketlist";
-	}
+	}//완료
 	
 	@RequestMapping(value = "market/search", method= {RequestMethod.GET, RequestMethod.POST})
 	public @ResponseBody Market search(Model model) {
@@ -129,15 +137,47 @@ public class MarketController {
 	
 	
 	///////////////마켓 업데이트/////////////////
-	@GetMapping("/market/updateForm")
-	public String updateForm() {
+	@GetMapping("/market/updateForm/{id}")
+	public String updateForm(Model model,@PathVariable int id) {
+		Optional<Market>marketDetail=marketRepo.findById(id);
+		Market market = marketDetail.get();
+		model.addAttribute("market", market);
 		return"/market/update";
 	}
-	@PostMapping("/market/update")
-	public String marketUpdate(Market market) {
+	
+	@PostMapping("/market/update/{id}")
+	public String update(
+			@PathVariable int id,
+			Market market,
+			@RequestParam("file") MultipartFile file
+			) {
+		
+		UUID uuid = UUID.randomUUID();
+		String uuidFilename =uuid+ "_" + file.getOriginalFilename();
+		Path filePath = Paths.get(fileRealPath + uuidFilename);
+		 // 사진 업로드 경로 설정
+		try {
+			Files.write(filePath, file.getBytes());// 하드디스크에 기록, IOExption이 일어날 수 있어서 try catch
+		} catch (IOException e) {
+			e.printStackTrace();
+		} //  file저장 완료
+		
+		market.setMarketImage(uuidFilename);//이거 안하면 DB에 null뜬다.
 		marketRepo.save(market);
 		
-		return "list/marketlist";
-	}
+		return"redirect:/market/marketlist";
+	}// 사진, 업데이트 시간빼고 완료
+	
+	
 	///////////////////////////////////////
+	
+///////////////마켓 삭제하기/////////////////
+@GetMapping("/market/delete/{id}")
+	public String delete(@PathVariable int id) { 
+	marketRepo.deleteById(id);
+	return"redirect:/market/marketlist";
+}//완료
+
+///////////////////////////////////////
+	
 }

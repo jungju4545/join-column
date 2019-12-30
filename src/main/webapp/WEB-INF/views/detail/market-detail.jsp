@@ -72,7 +72,6 @@
 				<div class="row">
 					<div class="basic-information">
 						<div class="col-md-3 col-sm-3">
-						<%-- <h1>${market.Id }</h1> --%>
 						<!-- 마켓 상세설명 : 여기에 승인이 필요한가???? -->
 						<img src="/upload/${market.marketImage}" alt="" class="img-responsive"> 
 						 <!-- <img src="/img/microsoft.png" alt="" class="img-responsive"> -->
@@ -100,11 +99,11 @@
 							
 							
 						<ul class="social">
-							<li><a href="" class="facebook"><i class="fa fa-facebook"></i>Facebook</a></li>
-							<li><a href="" class="google"><i class="fa fa-google-plus"></i>Google Plus</a></li>
-							<li><a href="" class="twitter"><i class="fa fa-twitter"></i>Twitter</a></li>
-							<li><a href="" class="linkedin"><i class="fa fa-linkedin"></i>Linked In</a></li>
-							<li><a href="" class="instagram"><i class="fa fa-instagram"></i>Instagram</a></li>
+							<li><a href="/market/updateForm/${market.id}" class="facebook">마켓수정하기</a></li>
+							<li><a href="/market/delete/${market.id}" class="google">삭제하기</a></li>
+							<li><a href="" class="twitter">Twitter</a></li>
+							<li><a href="" class="linkedin">Linked In</a></li>
+							<li><a href="" class="instagram">Instagram</a></li>
 						</ul>
 						<div class="panel panel-default">
 							<div class="panel-heading">
