@@ -27,5 +27,12 @@ public class TestKimController {
 		return "test/roottest";
 	}
 	
+	@GetMapping("/test/market/category/join")
+	public String marketCategoryJoinTest(Model model) {
+		List<Market> market = mMarketRepository.findAll();		
+		model.addAttribute("market", market);
+		return "test/roottest";
+	}
+	
 	
 }

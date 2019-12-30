@@ -10,7 +10,11 @@
 <body>
 
 <c:forEach var="market" items="${market}">
-${market.marketName}
+마켓이름 : ${market.marketName}	<br/>
+마켓카테고리 : ${market.category.category} <br/>
+지역 시/도 : ${market.local.city} <br/>
+지역 구/군 : ${market.local.country} <br/>
+지역 동/읍/리 : ${market.local.town} <br/>
 </c:forEach>
 
 </body>

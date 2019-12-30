@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -20,8 +22,15 @@ public class Market {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String marketName;
-	private int local;
-	private int category;
+	
+	@ManyToOne
+	@JoinColumn(name="localId")
+	private Local local;
+	
+	@ManyToOne
+	@JoinColumn(name="categoryId")
+	private Category category;
+	
 	private String marketAddress;
 	private String marketIntro;
 	private String kakaoId;

@@ -1,0 +1,33 @@
+use helloflea;
+
+select * from market;
+
+insert into market(local_id, category_id, market_name, create_date, update_date) values(1,1,'foodTruck', now(), now());
+insert into market(local_id, category_id, market_name, create_date, update_date) values(2,1,'foodTruck2', now(), now());
+insert into market(local_id, category_id, market_name, create_date, update_date) values(3,1,'foodTruck3', now(), now());
+insert into market(local_id, category_id, market_name, create_date, update_date) values(3,2,'jeans1', now(), now());
+
+delete from market;
+
+commit;
+
+insert into category(category) values('음식');
+insert into category(category) values('패션');
+insert into category(category) values('화장품');
+insert into category(category) values('주방용품');
+
+select * from category;
+select * from market;
+
+select * 
+from market join category
+on market.category_id = category.id;
+
+select * from local;
+
+insert into local(city, country, town) values('서울특별시','강서구','가양1동');
+insert into local(city, country, town) values('서울특별시','강서구','가양2동');
+insert into local(city, country, town) values('부산광역시','해운대구','재송동');
+
+select * from market join local
+on market.local_id = local.id;
