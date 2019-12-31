@@ -9,5 +9,5 @@ import com.helloflea.helloflea.model.Market;
 
 public interface MarketRepository extends JpaRepository<Market, Integer>{
 	Optional<Market> findByCategory(Model model);
-	Optional<Market> findByKakaoId(int kakaoId);
+	Optional<Market> findByKakaoId(String kakaoId);
 }

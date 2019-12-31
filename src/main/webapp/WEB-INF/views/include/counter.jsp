@@ -14,7 +14,7 @@
 					<div class="col-md-3 col-sm-3">
 						<div class="counter-text">
 							<span class="box1"><span aria-hidden="true" class="icon-expand"></span></span>
-							<h3>207</h3>
+							<h3>6</h3>
 							<p>등록된 마켓 수</p>
 						</div>
 					</div>

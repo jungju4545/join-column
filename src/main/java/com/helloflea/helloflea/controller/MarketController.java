@@ -117,6 +117,39 @@ public String test() {
 	///////////////////////////////////////
 	
 	
+	////////////////testjoin(사진 여러장 넣기)////////////////////
+	@GetMapping("/market/testjoin")
+	public String testjoinForm() {
+		return "/market/testjoin";
+	}//완료
+	
+	@PostMapping("/market/testjoinProc")
+	public String testMarketJoin(
+			Market market,
+			@RequestParam("file") MultipartFile file
+			//RequestParam("여기에는 jsp에서 넘어온 input의 name")
+			)
+	{
+		List<MultipartFile>files;
+		
+		UUID uuid = UUID.randomUUID();
+		String uuidFilename =uuid+ "_" + file.getOriginalFilename();
+		Path filePath = Paths.get(fileRealPath + uuidFilename);
+		System.out.println(filePath);
+		 // 사진 업로드 경로 설정
+		try {
+			Files.write(filePath, file.getBytes());// 하드디스크에 기록, IOExption이 일어날 수 있어서 try catch
+		} catch (IOException e) {
+			e.printStackTrace();
+		} //  file저장 완료
+		
+		market.setMarketImage(uuidFilename);//이거 안하면 DB에 null뜬다.
+		marketRepo.save(market);
+		return"redirect:/market/marketlist";
+		
+	}//완료
+	///////////////////////////////////////
+	
 	/////////////////마켓 리스트////////////////
 	@GetMapping("/market/marketlist")
 	public String marketList(Model model) {
@@ -178,6 +211,16 @@ public String test() {
 	return"redirect:/market/marketlist";
 }//완료
 
+///////////////////////////////////////
+
+////////////카톡 아이디로 등록한 마켓 찾기///////////
+@GetMapping("/market/register")
+public @ResponseBody Market register(String kakaoId,Model model) {
+	Optional<Market>markets= marketRepo.findByKakaoId(kakaoId);
+	Market market = markets.get();
+	model.addAttribute("market", market);
+	return market;
+}
 ///////////////////////////////////////
 	
 }
