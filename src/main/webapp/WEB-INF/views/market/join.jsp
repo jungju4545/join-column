@@ -80,11 +80,11 @@
 						<!-- <input id="input_img" type="file" name="file" placeholder="사진파일"> -->
 						<!-- type="multiple"을 붙이면 다중 파일일때 -->
 						<input id="input_imgs"  multiple="multiple" type="file" name="file"placeholder="사진파일" />
-						<div class="imgs_wrap">
-									
-									
-						</div>
 						
+						<div>
+							<div class="imgs_wrap" display="flex" >		
+							</div>
+					    </div>
 				       <!-- 이미지 업로드 끝 -->
 						<button type="submit" class="btn btn-primary">마켓 등록하기</button>
 						<!-- <p>Have't Any Account <a href="/login">계정이 있으신가요? 로그인하러 가기</a></p> -->
@@ -98,8 +98,6 @@
 		<%@ include file="../include/counter.jsp" %>	
 		<%@ include file="../include/footer.jsp" %>
 		<script language="javascript">
-	 
-
 
 	function goPopup() {
 		// 주소검색을 수행할 팝업 페이지를 호출합니다.
@@ -119,6 +117,7 @@
 		juso.value = roadFullAddr;
 	}
 
+	// 사진 여러장 등록하기
 	 var sel_files = [];
 	 
      $(document).ready(function() {

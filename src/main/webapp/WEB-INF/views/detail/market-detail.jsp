@@ -79,8 +79,8 @@
 						<input type="hidden" name="id" value="${market.id}">
 						<div class="col-md-9 col-sm-9">
 							<div class="profile-content">
-									<h2>${market.marketName }<span>Internet and computer software</span></h2>
-									<p>Now Hiring(102)</p>
+									<h2>${market.marketName }<span>FleaMarket</span></h2>
+									
 									<ul class="information">
 										<li><span>주소</span>${market.address}</li>
 										<li><span>카카오 아이디</span>${market.kakaoId }</li>

@@ -48,15 +48,15 @@
 		<section class="jobs">
 			<div class="container">
 				<div class="row heading">
-					<!-- <Form id="search_market" action="javascript:alert('현재페이지에 GET으로 전송')" Method="GET"> -->
-					<Form id="search_market" action="/market/search" Method="POST">
+					 <Form id="search_market" action="javascript:alert('현재페이지에 GET으로 전송')" Method="GET">
+					<!-- <Form id="search_market" action="/market/search" Method="POST"> -->
 						<span class="button-checkbox" id="category">
-        					<button type="button" class="btn" data-color="info" style="margin:3px;" onclick="info_sel_all()">전체</button>
+        					<button type="button" class="btn" data-color="info" style="margin:3px;" onclick="category_sel()">전체</button>
         						<input type="checkbox" name="category" value="전체" class="hidden" checked />
    						 </span>
 						<span class="button-checkbox" id="category">
         					<button  type="button"  class="btn" data-color="info" style="margin:3px;">의류</button>
-        						<input type="checkbox"  class="hidden"   />
+        						<input type="checkbox"  class="hidden"  name="category" value="의류"  />
    						 </span>
    						 <span class="button-checkbox" id="category">
         					<button type="button" class="btn" data-color="info" style="margin:3px;">액세서리</button>
@@ -68,56 +68,56 @@
    						 </span>
    						 <span class="button-checkbox" id="category">
         					<button type="button"  type="button" class="btn" data-color="info" style="margin:3px;">화장품</button>
-        						<input type="checkbox"  value="화장품" class="hidden"  />
+        						<input type="checkbox" name="category"  value="화장품" class="hidden"  />
    						 </span>
    						 <span class="button-checkbox" id="category">
         					<button type="button"  type="button" class="btn" data-color="info" style="margin:3px;">방향제</button>
-        						<input type="checkbox" value="화장품" name="category" class="hidden"  />
+        						<input type="checkbox"  name="category" value="방향제" class="hidden"  />
    						 </span>
    						 <span class="button-checkbox" id="category">
         					<button type="button"  type="button" class="btn" data-color="info" style="margin:3px;">캔들</button>
-        						<input type="checkbox"  class="hidden"  />
+        						<input type="checkbox"  class="hidden" name="category" value="캔들" />
    						 </span>
    						 <span class="button-checkbox" id="category">
         					<button type="button"  type="button" class="btn" data-color="info" style="margin:3px;">기타</button>
-        						<input   type="checkbox" class="hidden"  />
+        						<input   type="checkbox" class="hidden" name="category" value="기타"  />
    						 </span>
-   						 <hr/><!-- 이까지 카테고리 -->
+   						 <hr/>
+   						 <!-- 이까지 카테고리 -->
+   						 
    						 	<span class="button-checkbox" id="local">
-        						<button type="button"  class="btn" data-color="danger"  style="margin:3px;">전체</button>
-        						<input type="checkbox" value="화장품" name="local" class="hidden" checked />
+        						<button type="button"  class="btn" data-color="danger"  style="margin:3px;" onClick="local_sel()">전체</button>
+        						<input type="checkbox"  name="local" value="전체" class="hidden" checked />
     						</span>
     						<span class="button-checkbox" id="local">
         						<button type="button" class="btn" data-color="danger"  style="margin:3px;">서울/경기</button>
-        						<input type="checkbox" value="화장품" name="local" class="hidden"  />
+        						<input type="checkbox" name="local" value="서울/경기"  class="hidden"  />
     						</span>
     						<span class="button-checkbox" id="local">
-        						<button type="button" name="local" value="강원" class="btn" data-color="danger"  style="margin:3px;">강원</button>
-        						<input type="checkbox"  class="hidden"  />
+        						<button type="button"  class="btn" data-color="danger"  style="margin:3px;">강원</button>
+        						<input type="checkbox"  class="hidden" name="local" value="강원" />
     						</span>
     						<span class="button-checkbox" id="local">
-        						<button type="button" name="local" value="강원" class="btn" data-color="danger"  style="margin:3px;">충청</button>
-        						<input type="checkbox" class="hidden"  />
+        						<button type="button"  class="btn" data-color="danger"  style="margin:3px;">충청</button>
+        						<input type="checkbox" class="hidden" name="local" value="충청" />
     						</span>
     						<span class="button-checkbox" id="local">
         						<button type="button" name="local" value="강원" class="btn" data-color="danger"  style="margin:3px;">경상</button>
-        						<input type="checkbox" class="hidden"  />
+        						<input type="checkbox" class="hidden" name="local" value="경상" />
     						</span>
     						<span class="button-checkbox" id="local">
         						<button type="button" name="local" value="강원" class="btn" data-color="danger"  style="margin:3px;">전라</button>
-        						<input type="checkbox" class="hidden"  />
+        						<input type="checkbox" class="hidden" name="local" value="전라" />
     						</span>
     						<span class="button-checkbox" id="local">
         						<button type="button" name="local" value="강원" class="btn" data-color="danger"  style="margin:3px;">제주</button>
-        						<input type="checkbox" class="hidden"  />
+        						<input type="checkbox" class="hidden" name="local" value="제주" />
     						</span>
     						<hr/>
-    						<input type="submit" style="padding:3px 15px;border:1px solid black;border-radius: 5px;background: white;" value="검색"  onClick="btnChk"></input>
+    						<input type="submit" id="clickAll" style="padding:3px 15px;border:1px solid black;border-radius: 5px;background: white;" value="검색" ></input>
     					</Form>
 					</div>
 				</div>
-				
-				
 				<div class="companies">
 
 <!-- 9건씩 출력하고 더보기 누를 시 더 불러옵시다! ajax 사용 -->
@@ -132,7 +132,6 @@
 							<a href="/market/detail/${market.id}">
 								<span class="box1"><div style="width:100%;height:250px;"><img src="/upload/${market.marketImage }"   style="margin-bottom:10px;height:100%;max-width:100%;"></div></span>
 							</a>
-								
 								<div class="company-content">
 										<h3>${market.marketName}</h3>
 										<p>
@@ -150,7 +149,7 @@
 				</div>
 				
 				
-					<input type="button" class="btn brows-btn" value="마켓 목록 더보기" />
+					<input type="button" id="load" class="btn brows-btn" value="마켓 목록 더보기" />
 				</div>
 			
 		</section>
@@ -158,41 +157,42 @@
 		<!-- 마켓리스트 끝 -->
 		
 		<script>
+
+		// 마켓록목 더 보기
+	
+
+//검색 누르면 해당하는 조건만 리스트에 뿌리기
+//일단 카테고리, 지역에 체크된 값은 넘어옴.. : 전체버튼이 필요할까? 그냥 뿌리면 될거 같은데...
+//$(document).ready는 이벤트를 발생시키는 함수
+$(document).ready(function(){
+	//$("#clickAll").click : 아이디가 clickAll을 클릭시에 일어남
+	$("#clickAll").click(function(){
+		//$("input[name=category]:checked") 체크된거
+		//each >> 배열을 뜻함
+		$("input[name=category]:checked").each(function(){
+			var category= $(this).val();
+				console.log("category :"+category);		
+		});
 		
-		$('#btnChk').click(function() {
-
-			var gSize = "";
-
-			$("input[name=category]:checked").each(function() {
-
-			if(gSize == ""){
-
-			gSize = $(this).val();
-
-			} else {
-
-			gSize = gSize + "," + $(this).val();
-
-			}
-
-			});
-
-			$('#gSize').val(gSize);
-
-			});
-
-
-			function info_sel_all(){
-					test =document.querySelectorAll('#category')
-
-				}
+		$("input[name=local]:checked").each(function(){
+			var local= $(this).val();
+				console.log("local :"+local);		
+		});
 		
+	});
+	var allData = { "category": category, "local": local };
+	
+});
+// 여기서 ajax로 통신해서 해당하는 리스트만 뿌리기.
+
+			//카테고리 전체
 			function category_sel(){
 					test =document.querySelectorAll('#category')
 			}
-
+			//지역 전체 선택
 			function local_sel(){
-
+				test =document.querySelectorAll('#local')
+				
 			}
 
 		</script>
@@ -200,8 +200,6 @@
 		<script src="/js/checkbox.js"></script>
 		
 		<%@ include file="../include/counter.jsp" %>	
-		
-		
 		<%@ include file="../include/footer.jsp" %>
 		
     </body>

@@ -159,13 +159,7 @@ public String test() {
 		return "list/marketlist";
 	}//완료
 	
-	@RequestMapping(value = "market/search", method= {RequestMethod.GET, RequestMethod.POST})
-	public @ResponseBody Market search(Model model) {
-	// local, category 빼고 전부 null
-		Optional<Market> markets=marketRepo.findByCategory(model);
-		Market market = markets.get();
-		return market;
-	}
+	
 	///////////////////////////////////////
 	
 	
@@ -213,14 +207,9 @@ public String test() {
 
 ///////////////////////////////////////
 
-////////////카톡 아이디로 등록한 마켓 찾기///////////
-@GetMapping("/market/register")
-public @ResponseBody Market register(String kakaoId,Model model) {
-	Optional<Market>markets= marketRepo.findByKakaoId(kakaoId);
-	Market market = markets.get();
-	model.addAttribute("market", market);
-	return market;
-}
+////////////유저 아이디로 등록한 마켓 찾기///////////
+
+
 ///////////////////////////////////////
 	
 }
