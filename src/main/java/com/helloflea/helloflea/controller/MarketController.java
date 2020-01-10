@@ -44,22 +44,6 @@ public String test() {
 }
 
 ///////////////////////////////////////////////////
-	
-	
-	/////////////////////승인////////////////////////////
-	@GetMapping("/market/appoval/{id}")
-	public String appovalForm(Market market , @PathVariable int id) {
-		return"/detail/test-market-detail";
-	}
-	@PostMapping("admin/approval/{id}")
-	public String approval(Market market , @PathVariable int id) {
-		marketRepo.save(market);
-		return "/market/marketlist";
-	}
-	
-	///////////////////////////////////////////////////
-	
-	
 
 	////////////////////주소api////////////////////
 	@RequestMapping(value = "market/jusoPopup", method= {RequestMethod.GET, RequestMethod.POST})
