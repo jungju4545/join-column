@@ -25,6 +25,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.helloflea.helloflea.model.Category;
 import com.helloflea.helloflea.model.Local;
 import com.helloflea.helloflea.model.Market;
+import com.helloflea.helloflea.repository.CategoryRepository;
+import com.helloflea.helloflea.repository.LocalRepository;
 import com.helloflea.helloflea.repository.MarketRepository;
 
 @Controller
@@ -34,6 +36,10 @@ public class MarketController {
 	private MarketRepository marketRepo;
 	@Autowired
 	private BCryptPasswordEncoder bcpe;
+	@Autowired
+	private LocalRepository localRepo;
+	@Autowired
+	private CategoryRepository categoryRepo;
 	
 	@Value("${file.path}")
 	private String fileRealPath;
@@ -79,6 +85,8 @@ public String test() {
 	
 	@PostMapping("/market/joinProc")
 	public String MarketJoin(
+			Local local,
+			Category category,
 			Market market,
 			@RequestParam("file") MultipartFile file
 			//RequestParam("여기에는 jsp에서 넘어온 input의 name")
@@ -89,6 +97,9 @@ public String test() {
 		String uuidFilename =uuid+ "_" + file.getOriginalFilename();
 		Path filePath = Paths.get(fileRealPath + uuidFilename);
 		System.out.println(filePath);
+
+		System.out.println("local : "+local);
+		System.out.println("category : "+category);
 		
 		 // 사진 업로드 경로 설정
 		try {
@@ -98,6 +109,7 @@ public String test() {
 		} //  file저장 완료
 		
 		market.setMarketImage(uuidFilename);//이거 안하면 DB에 null뜬다.
+		
 		
 		marketRepo.save(market);
 		return"redirect:/market/marketlist";
@@ -139,13 +151,13 @@ public String test() {
 	}//완료
 	///////////////////////////////////////
 	
-	/////////////////마켓 리스트////////////////
 	@GetMapping("/market/marketlist")
 	public String marketList(Model model) {
 		//마켓의 모든 정보를 전부 들고올거임 (단 승인이 된것만)
 		List<Market> markets = marketRepo.findAll();
 		model.addAttribute("markets", markets);
 		return "list/marketlist";
+	/////////////////마켓 리스트///////////////
 	}//완료
 	
 	
