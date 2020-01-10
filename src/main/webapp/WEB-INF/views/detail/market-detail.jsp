@@ -105,80 +105,13 @@
 							<li><a href="" class="linkedin">Linked In</a></li>
 							<li><a href="" class="instagram">Instagram</a></li>
 						</ul>
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<i class="fa fa-user fa-fw"></i> About Microsoft
-							</div>
-												<!-- /.panel-heading -->
-							<div class="panel-body">
-							<p>The front end is the part that users see and interact with, includes the User Interface, the animations, and usually a bunch of logic to talk to the backend. It is the visual bit that the user interacts with.</p>	
-							</div>
-						</div>
+					
 						
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<i class="fa fa-leaf fa-fw"></i> Responsibilities:
-							</div>
-												<!-- /.panel-heading -->
-							<div class="panel-body">
-							<p>Rapid growth since incorporation has triggered a chain of products, acquisitions and partnerships beyond Google's core search engine (Google Search).</p>	
-							<ul>
-								<li>Software testing in a Web Applications/Mobile environment.</li>
-								<li>Software Test Plans from Business Requirement Specifications for test engineering group.</li>
-								<li>Software testing in a Web Applications environment.</li>
-								<li>Translate designs into responsive web interfaces</li>
-								<li>Software testing in a Web Applications/Mobile environment.</li>
-								<li>Software testing in a Web Applications environment.</li>
-								<li>Translate designs into responsive web interfaces</li>
-								<li>Software Test Plans from Business Requirement Specifications for test engineering group.</li>
-								<li>Run production tests as part of software implementation; Create, deliver and support test plans for testing group to execute.</li>
-								<li>Run production tests as part of software implementation; Create, deliver and support test plans for testing group to execute.</li>
-							</ul>
-							</div>
-						</div>
 						
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<i class="fa fa-coffee fa-fw"></i> Minimum qualifications:
-							</div>
-												<!-- /.panel-heading -->
-							<div class="panel-body">
-							<p>Rapid growth since incorporation has triggered a chain of products.</p>	
-							<ul>
-								<li>Software testing in a Web Applications/Mobile environment.</li>
-								<li>Software Test Plans from Business Requirement Specifications for test engineering group.</li>
-								<li>Software testing in a Web Applications environment.</li>
-								<li>Translate designs into responsive web interfaces</li>
-								<li>Software testing in a Web Applications/Mobile environment.</li>
-								<li>Software testing in a Web Applications environment.</li>
-								<li>Translate designs into responsive web interfaces</li>
-								<li>Software Test Plans from Business Requirement Specifications for test engineering group.</li>
-								<li>Run production tests as part of software implementation; Create, deliver and support test plans for testing group to execute.</li>
-								<li>Run production tests as part of software implementation; Create, deliver and support test plans for testing group to execute.</li>
-							</ul>
-							</div>
-						</div>
 						
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<i class="fa fa-graduation-cap fa-fw"></i> Preferred qualifications:
-							</div>
-												<!-- /.panel-heading -->
-							<div class="panel-body">
-							<ul>
-								<li>Software testing in a Web Applications/Mobile environment.</li>
-								<li>Software Test Plans from Business Requirement Specifications for test engineering group.</li>
-								<li>Software testing in a Web Applications environment.</li>
-								<li>Translate designs into responsive web interfaces</li>
-								<li>Software testing in a Web Applications/Mobile environment.</li>
-								<li>Software testing in a Web Applications environment.</li>
-								<li>Translate designs into responsive web interfaces</li>
-								<li>Software Test Plans from Business Requirement Specifications for test engineering group.</li>
-								<li>Run production tests as part of software implementation; Create, deliver and support test plans for testing group to execute.</li>
-								<li>Run production tests as part of software implementation; Create, deliver and support test plans for testing group to execute.</li>
-							</ul>
-							</div>
-						</div>
+						
+						
+						
 						
 
 					</div>

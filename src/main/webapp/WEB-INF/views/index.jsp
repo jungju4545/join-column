@@ -10,7 +10,19 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		
-
+		 <!-- Style 모바일페이지 둘러보기조정 -->
+        <style>
+        	@media (max-width: 992px) {
+        		#pc_menu{
+        			display: none;
+        		}
+        	}
+        	@media (min-width: 992px) {
+        		#mobile_menu{
+        			display: none;
+        		}
+        	}
+        </style>
 
     </head>
 	
@@ -63,11 +75,43 @@
 			</div>
 		</section>
 		
-		
+		<section class="features"  id="mobile_menu">
+		<div class="row heading">
+					<h2>HelloFlea 둘러보기</h2>
+				</div>
+		<div class="container" style="white-space:nowrap; overflow:auto;  width:100%;">
+				
+				<a href="#">
+				<div class="col-md-4 col-sm-4" style="width:60%;display: inline-block;">
+						<div class="features-content">
+							<span class="box1"><img src="/img/icon_market1.png" width="25%" style="margin-bottom:10px;"></span>
+							<h3>마켓</h3>
+						</div>
+					</div>								
+			</a>
+			<a href="#">
+			<div class="col-md-4 col-sm-4" style="width:60%;display: inline-block;">
+						<div class="features-content">
+							<span class="box1"><img src="/img/icon_follow.png" width="25%" style="margin-bottom:10px;"></span>
+							<h3>팔로잉</h3>
+						</div>
+					</div>
+					</a>
+					<a href="#">
+					<div class="col-md-4 col-sm-4" style="width:60%;display: inline-block;">
+						<div class="features-content">
+							<span class="box1"><img src="/img/icon_event.png" width="25%" style="margin-bottom:10px;"></span>
+							<h3>행사</h3>
+						</div>
+					</div>
+					</a>
+					</div>
+					
+					</section>
 		
 		<!-- 둘러보기 시작 -->
 		
-		<section class="features">
+		<section class="features" id="pc_menu">
 			<div class="container">
 				<div class="row heading">
 					<h2>HelloFlea 둘러보기</h2>
@@ -86,7 +130,7 @@
 					<div class="col-md-4 col-sm-4">
 						<div class="features-content">
 							<span class="box1"><img src="/img/icon_follow.png" width="25%" style="margin-bottom:10px;"></span>
-							<h3>팔로잉 중인 마켓</h3>
+							<h3>팔로잉</h3>
 						</div>
 					</div>
 				</a>
@@ -96,7 +140,7 @@
 						<div class="features-content">
 							<span class="box1"><img src="/img/icon_event.png" width="25%" style="margin-bottom:10px;"></span>
 							
-							<h3>플리마켓 행사</h3>
+							<h3>행사</h3>
 						</div>
 					</div>
 				</a>				
@@ -123,6 +167,7 @@
 	
 								<div class="company-content">
 										<h3>마켓이름</h3>
+										<span style="font-size: 14px;font-weight: bold;">마켓 한줄설명마켓 한줄설명마켓 한줄설명마켓 한줄설명</span>
 										<p>
 											<span class="company-name" style="color:grey;">
 												<span style="font-size:13px;background:#01b5ff;color:white;padding:3px 15px 3px 15px;margin:0px 0px 10px 0px;display: inline-block;border-radius: 2px;">팔로우 : 3</span><br/>
@@ -142,6 +187,7 @@
 	
 								<div class="company-content">
 										<h3>마이크로솦흐트</h3>
+										<span style="font-size: 14px;font-weight: bold;">마켓 한줄설명마켓 한줄설명마켓 한줄설명마켓 한줄설명</span>
 										<p>
 											<span class="company-name" style="color:grey;">
 												<span style="font-size:13px;background:#01b5ff;color:white;padding:3px 15px 3px 15px;margin:0px 0px 10px 0px;display: inline-block;border-radius: 2px;">팔로우 : 3</span><br/>
@@ -161,6 +207,7 @@
 	
 								<div class="company-content">
 										<h3>화장품가게</h3>
+										<span style="font-size: 14px;font-weight: bold;">마켓 한줄설명마켓 한줄설명마켓 한줄설명마켓 한줄설명</span>
 										<p>
 											<span class="company-name" style="color:grey;">
 												<span style="font-size:13px;background:#01b5ff;color:white;padding:3px 15px 3px 15px;margin:0px 0px 10px 0px;display: inline-block;border-radius: 2px;">팔로우 : 3</span><br/>
