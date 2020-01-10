@@ -178,9 +178,10 @@ $(document).ready(function(){
 			var local= $(this).val();
 				console.log("local :"+local);		
 		});
-		
+		var allData = { "category": category, "local": local };
+		console.log(allData)
 	});
-	var allData = { "category": category, "local": local };
+	
 	
 });
 // 여기서 ajax로 통신해서 해당하는 리스트만 뿌리기.
