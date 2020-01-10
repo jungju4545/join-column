@@ -30,7 +30,7 @@
 						<img class="img-responsive" alt="logo" src="/img/logo.png">
 						<h3>마켓등록신청</h3>
 						<h6 style="text-align: left; margin-bottom: -1px">마켓이름</h6>
-						<input type="text" class="form-control input-lg" placeholder="User Name" />
+						<input id="marketName" name="marketName" type="text" class="form-control input-lg" placeholder="User Name" />
 						<h6 style="text-align: left; margin-bottom: -1px">주소</h6>
 						<input type="text" class="form-control input-lg" placeholder="User Name" />
 						<h6 style="text-align: left; margin-bottom: -1px">SNS계정</h6>

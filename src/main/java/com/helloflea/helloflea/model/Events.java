@@ -1,7 +1,9 @@
 package com.helloflea.helloflea.model;
 
 
+import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,8 +22,8 @@ public class Events {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String eventName;
-	private Timestamp startDate;
-	private Timestamp endDate;
+	private Date startDate;
+	private Date endDate;
 	private int local;
 	private String eventIntro;
 	private String eventImage;
