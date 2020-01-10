@@ -35,7 +35,7 @@
 					
 						<input type="text" class="form-control input-lg" name="marketName" placeholder="Market Name" required="required">
 						
-						 <select class="form-control input-lg" name="local" required="required">
+						 <select class="form-control input-lg" name="${local.city}" required="required">
 						    <option value="">지역선택</option>
 						    <option value="서울">서울</option>
 						    <option value="경기도">경기도</option>
@@ -48,7 +48,7 @@
 						    <option value="#">#</option>
 						</select> 
 						
-						 <select class="form-control input-lg" name="category" required="required">
+						 <select class="form-control input-lg" name="${category.category}" required="required">
 						    <option value="">카테고리</option>
 						    <option value="음식">음식</option>
 						    <option value="의류">의류</option>
@@ -69,7 +69,7 @@
 								<a style="cursor:pointer;" class="blog_btn" onClick="goPopup()">주소찾기</a>
 							</div>
 						</div>
-							<input type="text" class="form-control input-lg" id="roadFullAddr" name="address" placeholder="도로명 주소 자동입력이 됩니다." required="required" readonly>  
+							<input type="text" class="form-control input-lg" id="roadFullAddr" name="marketAddress" placeholder="도로명 주소 자동입력이 됩니다." required="required" readonly>  
 						<!-- 도로명 주소 끝 -->
 						
 						<textarea style="resize: none;" class ="form-control input-lg" name="marketIntro" cols="40" rows="5" placeholder="마켓소개를 해주세요" required="required"></textarea>

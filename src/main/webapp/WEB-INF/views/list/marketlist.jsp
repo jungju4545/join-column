@@ -125,6 +125,7 @@
 			<div class="row">
 				
 				<c:forEach var="market" items="${markets}">
+				
 					<a href="#">
 						<div class="col-md-4 col-sm-4">
 							<div class="features-content">
@@ -137,8 +138,8 @@
 										<p>
 											<span class="company-name" style="color:grey;">
 												<span style="font-size:13px;background:#01b5ff;color:white;padding:3px 15px 3px 15px;margin:0px 0px 10px 0px;display: inline-block;border-radius: 2px;">팔로우 : 3</span><br/>
-												<i class="fa fa-map-marker"></i> ${market.local }<br/>
-												<i class="fa fa-list"></i>${market.category }
+												<i class="fa fa-map-marker"></i> ${market.local.city }<br/>
+												<i class="fa fa-list"></i>${market.category.category }
 											</span>
 										</p>
 									</div>

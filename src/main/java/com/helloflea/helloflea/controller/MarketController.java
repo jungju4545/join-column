@@ -22,6 +22,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.helloflea.helloflea.model.Category;
+import com.helloflea.helloflea.model.Local;
 import com.helloflea.helloflea.model.Market;
 import com.helloflea.helloflea.repository.MarketRepository;
 
@@ -82,10 +84,12 @@ public String test() {
 			//RequestParam("여기에는 jsp에서 넘어온 input의 name")
 			)
 	{
+		
 		UUID uuid = UUID.randomUUID();
 		String uuidFilename =uuid+ "_" + file.getOriginalFilename();
 		Path filePath = Paths.get(fileRealPath + uuidFilename);
 		System.out.println(filePath);
+		
 		 // 사진 업로드 경로 설정
 		try {
 			Files.write(filePath, file.getBytes());// 하드디스크에 기록, IOExption이 일어날 수 있어서 try catch
@@ -94,6 +98,7 @@ public String test() {
 		} //  file저장 완료
 		
 		market.setMarketImage(uuidFilename);//이거 안하면 DB에 null뜬다.
+		
 		marketRepo.save(market);
 		return"redirect:/market/marketlist";
 		
