@@ -32,7 +32,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
 		http.authorizeRequests()
-		.antMatchers("/admin/**","/root/**").authenticated()
+		.antMatchers("/admin/**","/root/**")
+		.authenticated()
 		.anyRequest().permitAll()
 		.and()
 				// .authorizeRequests().antMatchers("/secure/**").authenticated().anyRequest().hasAnyRole("ADMIN").and()
@@ -40,11 +41,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				// user의 컬럼명이 다를경우 아래코드 2줄로 설정
 				.usernameParameter("username")
 				.passwordParameter("password")
-				.loginPage("/user/login")
-				.loginProcessingUrl("/market/loginProc")
-				.defaultSuccessUrl("/index")
+				.loginPage("/user/loginForm")
+				.loginProcessingUrl("/user/loginProcess")
+				.defaultSuccessUrl("/")
 				.and()
 				.logout().logoutSuccessHandler(new MyLogoutSuccessHandler());
+				
 	}
 
 	@Autowired

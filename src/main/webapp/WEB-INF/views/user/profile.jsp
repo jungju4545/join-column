@@ -21,13 +21,13 @@
 		<section class="login-wrapper">
 			<div class="container">
 				<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
-					<form action="/user/loginProcess" method="post">
-						<img class="img-responsive" alt="logo" src="img/logo.png">
-						<input type="text" name="username" class="form-control input-lg" placeholder="User Name" style="border-radius: 10px;">
-						<input type="password" name="password" class="form-control input-lg" placeholder="Password" style="border-radius: 10px;">
-						<label><a href="">Forget Password?</a></label>
-						<button type="submit" class="btn btn-primary">Login</button>
-						<p>계정이 없으신가요? <a href="/user/joinForm">가입하러 가기</a></p>
+					<form action="/user/update" method="post">
+						<img class="img-responsive" alt="logo" src="/img/logo.png">
+						<input type="text"  name="username" class="form-control input-lg" placeholder="${principal.user.username}"  readonly style="border-radius: 10px;">
+						<input type="password"  name="password" class="form-control input-lg" placeholder="Password" style="border-radius: 10px;">
+						 <input type="password" class="form-control input-lg" placeholder="Password Check" style="border-radius: 10px;">
+						<input type="text" name="email" class="form-control input-lg" placeholder="Email" value="${principal.user.email}">
+						<button type="submit" class="btn btn-primary">수정완료</button>
 					</form>
 				</div>
 			</div>

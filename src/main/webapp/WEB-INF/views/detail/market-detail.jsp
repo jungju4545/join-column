@@ -82,7 +82,7 @@
 									<h2>${market.marketName }<span>FleaMarket</span></h2>
 									
 									<ul class="information">
-										<li><span>주소</span>${market.address}</li>
+										<li><span>주소</span>${market.marketAddress}</li>
 										<li><span>카카오 아이디</span>${market.kakaoId }</li>
 										<li><span>소개</span>${market.marketIntro }</li>
 										<li>
@@ -92,7 +92,7 @@
 										<input type="checkbox" name="status" value="C" onClick="doOpenCheck(this)">C</li>
 										<li>
 										
-										<span>카테고리</span>${market.category }</li>
+										<span>카테고리</span>${market.category.category }</li>
 									</ul>
 								</div>
 							</div>

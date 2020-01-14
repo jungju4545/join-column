@@ -120,7 +120,7 @@
 				<a href="#">
 					<div class="col-md-4 col-sm-4">
 						<div class="features-content">
-							<span class="box1"><img src="/img/icon_market1.png" width="25%" style="margin-bottom:10px;"></span>
+							<span class="box1"><a href="/market/marketlist"><img src="/img/icon_market1.png" width="25%" style="margin-bottom:10px;"></a></span>
 							<h3>마켓</h3>
 						</div>
 					</div>

@@ -33,9 +33,9 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-							<li><a href="index.html">Home</a></li> 
-							<li><a href="login.html">Login</a></li>
-							<li><a href="companies.html">Companies</a></li> 
+							<li><a href="http://localhost:8000/">Home</a></li> 
+							<li><a href="user/loginForm">Login</a></li>
+							<li><a href="/market/join">마켓등록하기</a></li> 
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">관리</a>
 								<ul class="dropdown-menu animated fadeOutUp" style="display: none; opacity: 1;">
