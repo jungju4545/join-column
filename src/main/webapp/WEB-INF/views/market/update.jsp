@@ -32,8 +32,8 @@
 						<h2>마켓수정</h2>
 						<input type="text" class="form-control input-lg" name="marketName" value="${market.marketName }" placeholder="Market Name" required="required">
 						
-						 <select class="form-control input-lg" name="local" value=""  required="required">
-						    <option value="${market.local}">${market.local}</option>
+						 <select class="form-control input-lg" name="${local.city}" value=""  required="required">
+						    <option value="${market.local.city}">${market.local.city}</option>
 						    <option value="서울">서울</option>
 						    <option value="경기도">경기도</option>
 						    <option value="강원">강원</option>
@@ -45,8 +45,8 @@
 						    <option value="#">#</option>
 						</select> 
 						
-						 <select class="form-control input-lg" name="category"   required="required">
-						    <option value="${market.category }">${market.category }</option>
+						 <select class="form-control input-lg" name="${category.category}"   required="required">
+						    <option value="${market.category.category }">${market.category.category }</option>
 						    <option value="음식">음식</option>
 						    <option value="의류">의류</option>
 						    <option value="악세사리">악세사리</option>
@@ -73,7 +73,7 @@
 								<a style="cursor:pointer;" class="blog_btn"  onClick="goPopup()">주소찾기</a>
 							</div>
 						</div>
-							<input type="text" class="form-control input-lg"  id="roadFullAddr" name="address" value="${market.address}" placeholder="도로명 주소 자동입력이 됩니다." required="required" readonly>  
+							<input type="text" class="form-control input-lg"  id="roadFullAddr" name="address" value="${market.marketAddress}" placeholder="도로명 주소 자동입력이 됩니다." required="required" readonly>  
 						<!-- 도로명 주소 끝 -->
 						
 						<textarea style="resize: none;" class ="form-control input-lg" name="marketIntro"   cols="40" rows="5" placeholder="마켓소개를 해주세요" required="required">${market.marketIntro}</textarea>
